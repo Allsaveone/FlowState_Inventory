@@ -31,7 +31,8 @@ public class Item
     {
         this.ID = data.id;
         this.Name = data.name;
-        this.Icon = Resources.Load<Sprite>("Sprites/ItemIcons/Icons/128px/" + data.iconName); //NB!!! Need to Atlas these
+        //this.Icon = SpriteAtlasManager.Instance.GetSprite(data.iconName);//Resources.Load<Sprite>("Sprites/ItemIcons/Icons/128px/" + data.iconName); //NB!!! Need to Atlas these
+        GetItemSprite(data.iconName);
         this.Description = data.description;
         this.ItemType = data.itemType;
         this.Stackable = data.stackable;
@@ -46,5 +47,10 @@ public class Item
         //Stats/ItemType
         this.Stackable = false;
         this.Value = -1;
+    }
+
+    public void GetItemSprite(string spriteName)
+    {
+        this.Icon = SpriteAtlasManager.Instance.GetSprite(spriteName);
     }
 }

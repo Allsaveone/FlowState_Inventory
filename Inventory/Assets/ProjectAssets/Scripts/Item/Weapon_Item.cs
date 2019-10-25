@@ -11,12 +11,15 @@ public class WeaponItem : Item
     {
         ID = data.id;
         Name = data.name;
-        Icon = Resources.Load<Sprite>("Sprites/ItemIcons/Icons/128px/" + data.iconName);
+        //Icon = SpriteAtlasManager.Instance.GetSprite(data.iconName); //Resources.Load<Sprite>("Sprites/ItemIcons/Icons/128px/" + data.iconName);
+        GetItemSprite(data.iconName);
         Description = data.description;
         ItemType = data.itemType;
         Stackable = data.stackable;
         Value = data.value;
         weaponData = data.itemJson;
+
+        //WeaponData();
     }
 
     public WeaponItem()//For clearing out an items Datawhen unequiping
@@ -32,6 +35,6 @@ public class WeaponItem : Item
 
     public void WeaponData()
     {
-
+        //Debug.LogError("Yeet!");
     }
 }
